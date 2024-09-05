@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 import pandas as pd
-from openpyxl import Workbook
 
 # Initialize the WebDriver
 driver = webdriver.Chrome()
@@ -82,25 +81,6 @@ try:
             except Exception as e:
                 print(f"Could not retrieve data for URL: {url}")
                 print(f"Error: {e}")
-
-        # Step 5: Reset ZIP code input for the next iteration
-        #try:
-            #print("Navigating back to the main page to reset ZIP code...")
-            #driver.get(main_url)
-            #time.sleep(10) 
-            
-            #print("Attempting to reset ZIP code input...")
-            # Wait for the reset element to be clickable
-            #reset_element = WebDriverWait(driver, 30).until(
-             #   EC.element_to_be_clickable((By.XPATH, '//div[@class="location-info"]/p[@class="zipcode"]'))
-            #)
-            #print("Reset element found and clickable.")
-            #reset_element.click()
-            #print("Reset element clicked.")
-            #time.sleep(5)  # Wait for the reset action to complete
-        #except Exception as e:
-        #    print(f"Error resetting ZIP code input: {e}")
-
 
 finally:
     # Close the WebDriver
